@@ -11,7 +11,7 @@ var config={
     database:'duttaanimesh08',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password:'-duttaanimesh08-68770' };
+    password:'db-duttaanimesh08-68770' };
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
