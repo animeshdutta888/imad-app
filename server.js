@@ -26,7 +26,9 @@ var config={
         <link href="/ui/style.css" rel="stylesheet" />
         </head>
         <body>
-      
+        <h3>
+        ${heading}
+        </h3>
         <div class="container" >
          <div>
          <a href="/">Home</a>
