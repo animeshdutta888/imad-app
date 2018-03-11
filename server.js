@@ -86,14 +86,14 @@ app.get('/hash/:input',function(req,res){
 app.post('/create-user',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
-    var salt=crypto.getRandomBytes(128).toString('hex');
+    var salt="simeone";
     var dbString=hash(password,salt);
     pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,dbString],function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
         else{
-            res.status(200).send("User created"+username);
+            res.status(200).send('User created'+username);
         }
     });
 });
