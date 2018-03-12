@@ -106,7 +106,7 @@ app.post('/login',function(req,res){
         }
         else if(result.rows.length===0)
             {
-            res.send(403).send("Username/password invalid");    
+            res.status(403).send("Username/password invalid");    
             }
             
         
