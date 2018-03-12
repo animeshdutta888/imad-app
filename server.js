@@ -116,7 +116,7 @@ app.post('/login',function(req,res){
             var hashedPassword=hash(password,salt);
             if(hashedPassword===dbString)
                 {
-                res.send('Credentials correct');
+                res.send(200).send('Credentials correct');
             }
             else
             {
