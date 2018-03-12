@@ -1,3 +1,4 @@
+window.onload=function(){
 var submit=document.getElementById('submitb');
 submit.onClick=function(){
     var request=new XMLHttpRequest();
@@ -25,5 +26,6 @@ submit.onClick=function(){
      request.setRequestHeader('Content-Type','application/json');
      request.send(JSON.stringify({username:username,password:password}));
     
-};
+};          
     
+};
