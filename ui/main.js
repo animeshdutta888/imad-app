@@ -1,5 +1,5 @@
 window.onload=function(){
-var submit=document.getElementById('submit_btn');
+var submit=document.getElementById('submitb');
 submit.onClick=function(){
     var request=new XMLHttpRequest();
     request.onreadystatechange=function()
