@@ -1,6 +1,7 @@
 window.onload=function(){
 var submit=document.getElementById('submitb');
 submit.onClick=function(){
+    alert("logged in successfully");
     var request=new XMLHttpRequest();
     request.onreadystatechange=function()
     {
