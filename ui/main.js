@@ -1,4 +1,4 @@
-window.onload=function(){
+
 var submit=document.getElementById('submitb');
 submit.onClick=function(){
     alert("logged in successfully");
@@ -29,4 +29,3 @@ submit.onClick=function(){
     
 };          
     
-};
