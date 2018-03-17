@@ -145,7 +145,7 @@ app.get('/check-login',function(req,res){
          res.send('You are not logged in')
      }
 });
-app.get('logout',function(req,res){
+app.get('/logout',function(req,res){
  delete req.session.auth;
  res.send('Logged out');
 });
