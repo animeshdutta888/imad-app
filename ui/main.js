@@ -1,3 +1,4 @@
+window.onload=function(){
 var submit=document.getElementById('submitb');
 submit.onClick=function(){
     var request=new XMLHttpRequest();
@@ -27,3 +28,4 @@ submit.onClick=function(){
     
 };          
     
+};
