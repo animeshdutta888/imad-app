@@ -10,7 +10,8 @@ submit.onclick=function(){
             if(request.status===200){
                 console.log('Logged in');
                 alert("logged in successfully");
-                res.send('article-one.html');
+                  res.sendFile(path.join(__dirname, 'ui','article-two.html'));
+
             }
             else if(request.status===403){
                 alert("Username/password is invalid");
