@@ -25,7 +25,7 @@ submit.onClick=function(){
      
      request.open('POST','http://duttaanimesh08.imad.hasura-app.io/login',true);
      request.setRequestHeader('Content-Type','application/json');
-     request.send(JSON.stringify({usernameduttaanimesh08:username,password:password}));
+     request.send(JSON.stringify({username:username,password:password}));
     
 };          
     
