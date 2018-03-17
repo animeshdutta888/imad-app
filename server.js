@@ -5,6 +5,7 @@ var Pool=require('pg').Pool;
 var app = express();
 var crypto=require('crypto');
 var bodyParser=require('body-parser');
+var session=require('express-session')
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 var config={
@@ -13,6 +14,10 @@ var config={
     host:'db.imad.hasura-app.io',
     port:'5432',
     password:process.env.DB_PASSWORD };
+    app.use(session({
+        secret: 'somerandomstring',
+        cookie: {maxAge:1000*60*60*24*30}
+    }));
     function createTemplate(data)
     {
         var title=data.title;
@@ -116,6 +121,7 @@ app.post('/login',function(req,res){
             var hashedPassword=hash(password,salt);
             if(hashedPassword===dbString)
                 {
+                    res.session.auth={userId: result.rows[0].id};
                 res.send('Credentials correct');
             }
             else
@@ -129,7 +135,16 @@ app.post('/login',function(req,res){
     });
 });
 
-
+app.get('/check-login',function(req,res){
+    if(req.session && req.session.auth && req.session.auth.userId)
+     {
+         res.send('You are logged in');
+     }
+     else{
+     
+         res.send('You are not logged in')
+     }
+});
 app.get('/ui/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
 });
