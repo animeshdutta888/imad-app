@@ -1,7 +1,6 @@
 window.onload=function(){
 var submit=document.getElementById('submitb');
 submit.onclick=function(){
-        console.log('test');
 
     var request=new XMLHttpRequest();
     request.onreadystatechange=function()
@@ -23,8 +22,8 @@ submit.onclick=function(){
  
      var username=document.getElementById('username').value;
      var password=document.getElementById('password').value;
-     console.log('username');
-     console.log('password');
+     console.log(username);
+     console.log(password);
      
      request.open('POST','http://duttaanimesh08.imad.hasura-app.io/login',true);
      request.setRequestHeader('Content-Type','application/json');
