@@ -1,4 +1,5 @@
 window.onload=function(){
+    console.log('test');
 var submit=document.getElementById('submitb');
 submit.onClick=function(){
     var request=new XMLHttpRequest();
