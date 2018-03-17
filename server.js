@@ -122,7 +122,6 @@ app.post('/login',function(req,res){
             if(hashedPassword===dbString)
                 {
                 res.session.auth={userId: result.rows[0].id};
-                alert('Credentials correct');
                 res.send('Credentials correct');
             }
             else
